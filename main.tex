@@ -96,6 +96,9 @@ act over semigroup, unar, congruence lattice, identity.
 %число наименований в библиографии
 \Bibliography{15 названий.}{15 titles.}
 
+\def\Con{\operatorname{Con}}
+\def\Eq{\operatorname{Eq}}
+
 \begin{document}
 
 %генерация заглавия статьи
@@ -104,6 +107,58 @@ act over semigroup, unar, congruence lattice, identity.
 \enmaketitle
 
 \section{Введение}
+
+Решётка конгруэнций $\Con \mathbf{A}$ универсальной алгебры $\mathbf{A}$ — важная характеристика этой алгебры.
+Это полная решётка с наименьшим элементом $\Delta = \{ (a,a) \mid a \in \mathbf{A} \}$ и наибольшим элементом $\nabla = \mathbf{A} \times \mathbf{A}$, причём $\Con \mathbf{A}$ является полной подрешёткой решётки $\Eq \mathbf{A}$ всех отношений эквивалентности на множестве $\mathbf{A}$.
+Изучение алгебр с условиями на решётку конгруэнций — активно развивающееся и богатое содержанием направление общей алгебры.
+Сюда относятся условия максимальности и минимальности, приводящие к понятиям артиновых и нётеровых алгебр, условие простоты (когда $\Con \mathbf{A} = \{ \Delta, \nabla \}$), антипростоты ($\Con \mathbf{A} = \Eq \mathbf{A}$), дистрибутивности или модулярности (т.е. решётка $\Con \mathbf{A}$ дистрибутивна или модулярна), подпрямой неразложимости и т.д.
+
+\textit{Полигон над полугруппой} — это множество $X$, на котором действует полугруппа $S$, т.е. определено отображение $X \times S \to X$, $(x,s) \mapsto xs$ удовлетворяющее условию $x(st) = (xs)t$ при $x \in X$, $s,t \in S$ (см.~\cite{Kilp_1}).
+Полигон над полугруппой является алгебраической моделью \textit{автомата}.
+Кроме того, понятие полигона фактически совпадает с понятием \textit{унарной алгебры}.
+
+Подмножество $Y \subseteq X$ называется \textit{подполигоном}, если $YS \subseteq Y$.
+Элемент $z \in X$ называется \textit{нулём}, если $zs = z$ при всех $s \in S$.
+Нулей у полигона, в отличие от полугруппы, может быть сколько угодно (в полугруппе нуль, если он существует, единственен).
+\textit{Решётку конгруэнций} полигона $X$ над полугруппой $S$ мы будем обозначать $\Con_S X$ или просто $\Con X$.
+
+Пусть $X$ — полигон над полугруппой $S$ и $Y$ — его подполигон.
+Положим $ \rho_Y = (Y \times Y) \cup \Delta_X $.
+Это конгруэнция полигона $X$, называемая \textit{конгруэнцией Риса}, соответствующей подполигону $Y$.
+Нетрудно видеть, что для любого подполигона $Y$, у конгруэнции Риса $\rho_Y$ один из классов есть множество $Y$, а другие классы одноэлементны.
+Для фактор-полигона $X/\rho_Y$ мы будем также использовать краткую запись: $X/Y$.
+
+Пусть $X$ — полигон над полугруппой $S$ и $X_i$ ($i \in I$) — его подполигоны, причём $X = \bigcup_{i \in I} X_{i}$ и $X_{i} \cap X_{j} = \varnothing$ при $i \neq j$.
+В этом случае мы называем полигон $X$ \textit{копроизведением} полигонов $X_i$ и пишем $X = \bigsqcup_{i \in I} X_{i}$.
+В работах по унарам копроизведение называют обычно прямой суммой.
+
+Для полугруппы $S$ полагаем $S^1 = S \cup \{ 1 \}$.
+Здесь $S^1$ — полугруппа, полученная присоединением к $S$ внешним образом единицы (при этом считаем, что $s \cdot 1 = 1 \cdot s = s$ для каждого $s \in S^1$).
+Если $X$ — полигон над $S$, то его можно сделать полигоном над полугруппой $S^1$, положив $x \cdot 1 = x$ при $x \in X$.
+
+На полигоне $X$ над полугруппой $S$ можно ввести отношение \textit{квазипорядка} $\leqslant$ (рефлексивное и транзитивное отношение), полагая $x \leqslant y \Leftrightarrow x \in yS^1$.
+Полигон $X$ называется \textit{связным}, если для любых $x,y \in X$ существуют элементы $x_1,\ldots,x_{2n} \in X$ такие, что  $ x \leqslant x_1 \geqslant x_2 \leqslant \ldots \geqslant x_{2n} \leqslant y$.
+Нетрудно видеть, что любой полигон $X$ является копроизведением связных подполигонов $X_i$ (\textit{компонент связности}).
+
+\textit{Унар}, т.е. множество $X$ с одной унарной операцией $f: X \to X$, можно рассматривать как полигон над свободной циклической полугруппой $S = \{ a,a^{2},a^{3},\ldots\}$, при этом $x \cdot a = f(x)$ для $x \in X$.
+
+Алгебрам $\mathbf{A}$, у которых решётка конгруэнций $\Con \mathbf{A}$ является дистрибутивной или модулярной, посвящено значительное число работ разных авторов. 
+Дистрибутивные и модулярные полигоны над полугруппами изучались в~\cite{Ptakhov_2}, полное описание таких полигонов над полугруппами левых или правых нулей получено в~\cite{Khaliullina_3}. 
+В работе~\cite{Egorova_4} были описаны дистрибутивные и модулярные унары.
+Дистрибутивность решётки $\Con \mathbf{A}$ означает выполнение в ней тождества $ (x \vee y) \wedge z = (x \wedge z) \vee (y \wedge z) $, модулярность задаётся тождеством $ (x \vee y) \wedge (x \vee z) = x \vee (z \wedge (x \vee y)) $.
+Естественным представляется изучение алгебр $\mathbf{A}$, у которых решётка $\Con \mathbf{A}$ удовлетворяет какому-нибудь нетривиальному решёточному тождеству.
+Данное условие является \textit{условием конечности}, так как любая конечная алгебра ему удовлетворяет (это следует из того, что всякая конечная решётка удовлетворяет нетривиальному тождеству — см. лемму 3).
+Многообразия алгебр, у которых решётки конгруэнций всех алгебр удовлетворяют одному и тому же нетривиальному тождеству, посвящены монография~\cite{Kearnes_5} и диссертация~\cite{Nation_6}.
+В работе~\cite{Repnitsky_7} были описаны коммутативные полугруппы, у которых решётки подполугрупп удовлетворяют нетривиальному решёточному тождеству.
+Цель данной работы — найти необходимое условие того, что решётка конгруэнций унара удовлетворяет нетривиальному тождеству.
+Является ли это условие достаточным, авторам неизвестно.
+
+Работа является продолжением работы~\cite{Kozhukhov_8}.
+Основные определения мы здесь приведём, за доказательствами отошлём читателя к работе~\cite{Kozhukhov_8}.
+Отметим, что заключительное утверждение, сформулированное в последнем абзаце работы~\cite{Kozhukhov_8}, требует корректировки: вместо «копроизведения конечного числа прямых» следовало написать «копроизведения конечного числа прямых и лучей».
+
+Основные сведения из универсальной алгебры можно найти в~\cite{Kohn_9}, из теории решёток — в~\cite{Gretzer_10}, теории полугрупп — в~\cite{Clifford_11}, полигонов над полугруппами — в~\cite{Kilp_1}, унаров — в~\cite{Jakubikova_12}, многообразий решёток — в~\cite{Jipsen_13}.
+
 
 \section{Основной текст статьи}
 
@@ -122,9 +177,47 @@ act over semigroup, unar, congruence lattice, identity.
 %библиография по ГОСТу
 \begin{thebibliography}{99}
 	
-	\bibitem{Ivanov_1}
-	Banks~W.\,D., Conflitti~A., Shparlinski~I.\,E. Character sums over integers with restricted $g$-ary digits // Illinois J. Math. 2002. Vol. 46, №3. P. 819--836.
+	\bibitem{Kilp_1}
+	Kilp~M., Knauer~U., Mikhalev~A.\,V. Monoids, acts and categories // Berlin - N.Y., de Gruyter, 2000. 529 P.
 	
+	\bibitem{Ptakhov_2}
+	Птахов~Д.\,О., Степанова~А.\,А. Решётки конгруэнций полигонов // Дальневост. матем. журн. 2013. Т.~13, №1. С.~107--115.
+	
+	\bibitem{Khaliullina_3}
+	Халиуллина~А.\,Р. Условия модулярности решётки конгруэнций полигона над полугруппой правых или левых нулей // Дальневост. матем. журн. 2015. Т.~15, №~1. С.~102--120.
+	
+	\bibitem{Egorova_4}
+	Егорова~Д.\,П. Структура конгруэнций унарной алгебры // Межвузовский научный сборник «Упорядоченные множества и решётки». г. Саратов: Издательство Саратовского университа. 1978. Вып.~5. С.~11--43.
+	
+	\bibitem{Kearnes_5}
+	Kearnes~K.\,A., Kiss~E.\,W. The shape of congruence lattices // Memoirs of the American Mathematical Society. 2013. Vol.~222. 169 P.
+	
+	\bibitem{Nation_6}
+	Nation~J.\,B. Varieties of algebras whose congruence lattices satisfy lattice identities (Thesis) // Pasadena: California Institute of Technology. 1973. 63 P.
+	
+	\bibitem{Repnitsky_7}
+	Репницкий~В.\,Б., Кацман~С.\,И. Коммутативные полугруппы, решётка подполугрупп которых удовлетворяет нетривиальному тождеству // Математический сборник. 1988. Т.~137(179), №~4(12). С.~462--482.
+	
+	\bibitem{Kozhukhov_8}
+	Кожухов~И.\,Б., Пряничников~А.\,М. Об унарах с тождествами в решётке конгруэнций // Материалы VI международной научно-технической конференции СИТОНИ-2019. Донецк, 2019. С.~64--69.
+	
+	\bibitem{Kohn_9}
+	Кон~П.\,М. Универсальная алгебра // М.: Мир, 1968. 359~С.
+	
+	\bibitem{Gretzer_10}
+	Гретцер~Г. Общая теория решёток // М.: Мир, 1982. 454~С.
+	
+	\bibitem{Clifford_11}
+	Клиффорд~А., Престон~Г. Алгебраическая теория полугрупп // М.: Мир, 1972. Т.~1. 286~с.; Т.~2. 423~С.
+	
+	\bibitem{Jakubikova_12}
+	Jakubiková-Studenovská~D., Pócs~J. Monounary algebras // Košice: UPJS, 2009. 301~P.
+	
+	\bibitem{Jipsen_13}
+	Jipsen~P., Rose~H. Variety of lattices // Lecture Notes in Mathematics, 1992. Vol.~1533. 166~P.
+	
+	\bibitem{Burris_14}
+	Burris~S., Sankappanavar~H.\,P. A course in universal algebra // Springer New York, 1981, Vol.~78, 276~P.
 	
 \end{thebibliography}
 
@@ -132,8 +225,47 @@ act over semigroup, unar, congruence lattice, identity.
 %библиография по Гарвардскому стандарту
 \begin{engbibliography}{99}
 	
-	\bibitem{en_Ivanov_1}
-	Banks, W.\,D., Conflitti, A. \& Shparlinski, I.\,E. 2002, ``Character sums over integers with restricted $g$-ary digits'', \textit{Illinois J. Math.}, vol. 46, no. 3, pp. 819--836.
+	\bibitem{en_Kilp_1}
+	Kilp, M., Knauer, U. \& Mikhalev, A.\,V. 2000, ``Monoids, acts and categories``, \textit{Berlin; New York: de Gruyter}, 546 pp.
+	
+	\bibitem{en_Ptakhov_2}
+	Ptahov, D.\,O. Stepanova, A.\,A. 2013, ``Congruence lattice of S-acts``, \textit{Far Eastern Mathematical Journal}, vol. 13, no. 1, pp. 107--115.
+	
+	\bibitem{en_Khaliullina_3}
+	Khaliullina, A.R. 2015, ``Modularity conditions of the lattice of congruences of acts over right or left zero semigroups``, \textit{Far Eastern Mathematical Journal}, vol. 15, no. 1, pp. 102--120.
+	
+	\bibitem{en_Egorova_4}
+	Egorova, D.\,P. 1978, ``The structure of congruences of unary algebra``, \textit{Interuniversity scientific collection "Ordered sets and lattices"}, Saratov: Saratov University Press, issue 5, pp. 11--4. (in Russian)
+	
+	\bibitem{en_Kearnes_5}
+	Kearnes, K.\,A., Kiss, E.\,W. 2013, ``The shape of congruence lattices``, \textit{Memoirs of the American Mathematical Society}, vol. 222, 169 pp.
+	
+	\bibitem{en_Nation_6}
+	Nation, J.\,B. 1973, ``Varieties of algebras whose congruence lattices satisfy lattice identities``, \textit{PhD thesis, California Institute of Technology}, 63 pp.
+	
+	\bibitem{en_Repnitsky_7}
+	Repnitsky, V.\,B., Katsman, S.\,I. 1990, ``Commutative semigroups with lattice of subsemigroups satisfies a nontrivial identity``, \textit{Mathematics of the USSR-Sbornik}, vol. 65, no. 2, pp. 465--485.
+	
+	\bibitem{en_Kozhukhov_8}
+	Kozhukhov, I.\,B., Pryanichnikov, A.\,M. 2019, ``On unars with identities in congruence lattice``', \textit{Proceedings of the VI International Scientific and Technical Conference SITONI-2019}, Donetsk, pp. 64--69. (in Russian)
+	
+	\bibitem{en_Kohn_9}
+	Kohn, P.\,M. 1981, ``Universal algebra``, \textit{Springer Dordrecht}, 412 pp.
+	
+	\bibitem{en_Gretzer_10}
+	Grätzer, G. 2011, \textit{Lattice Theory: Foundation}, Birkhäuser Basel, 614 pp.
+	
+	\bibitem{en_Clifford_11}
+	Clifford, A.\,H., Preston, G.\,B. 1961--1967, ``The algebraic theory of semigroups``, \textit{American Mathematical Society. Mathematical Surveys}, Providence, Rhode Island, no. 7, vol. I-II, 244 pp. and 350 pp.
+	
+	\bibitem{en_Jakubikova_12}
+	Jakubiková-Studenovská, D., Pócs, J. 2009, ``Monounary algebras``, \textit{UPJS}, Košice, 301 pp.
+	
+	\bibitem{en_Jipsen_13}
+	Jipsen, P., Rose, H. 1992, Variety of lattices, \textit{Lecture Notes in Mathematics}, Springer Berlin, vol. 1533, 166 pp.
+	
+	\bibitem{en_Burris_14}
+	Burris, S., Sankappanavar, H.P. 1981, A course in universal algebra, \textit{Springer New York}, vol. 78, 276 pp.
 	
 \end{engbibliography}
 

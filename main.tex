@@ -1,4 +1,4 @@
-\documentclass[11pt,twoside,draft
+\documentclass[11pt,twoside,final
 ]{article}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,indentfirst,enumerate,textcomp}
 \usepackage[utf8]{inputenc}
@@ -58,7 +58,7 @@ I. B. Kozhukhov, A. M. Pryanichnikov}
 \noindent
 \emph{e-mail: kozhuhov\_i\_b@mail.ru}
 
-\noindent {\bf Пряничников Алексей Михайлович}~--- механико-математический факультет МГУ, АО <<Концерн Гранит>> (г. Москва).
+\noindent {\bf Пряничников Алексей Михайлович}~--- механико-математический факультет МГУ, ООО <<Квантом>> (г. Москва).
 
 \noindent
 \emph{e-mail: genary@ya.ru}
@@ -71,7 +71,7 @@ I. B. Kozhukhov, A. M. Pryanichnikov}
 \noindent
 \emph{e-mail: kozhuhov\_i\_b@mail.ru}
 
-\noindent {\bf Pryanichnikov Alexey Mikhailovich}~--- Fac. of Mech. and Math. of Moscow State Univ., <<Concern Granit>> JSC, (Moscow).
+\noindent {\bf Pryanichnikov Alexey Mikhailovich}~--- Fac. of Mech. and Math. of Moscow State Univ., <<Kvantom>> LLC, (Moscow).
 
 \noindent
 \emph{e-mail: genary@ya.ru}
@@ -190,7 +190,7 @@ act over semigroup, unar, congruence lattice, identity.
 Два направления $(x_i)$ и $(y_i)$ назовём \textit{эквивалентными} (пишем $(x_i) \sim (y_i)$), если существуют числа $j,k \in \mathbb{Z}$ такие, что $x_{i+k} = y_i$ при всех $i \geqslant j$ (см. пример на рисунке~\ref{fig:eq_dir}).
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=1]{img/eq_dir.png} %Вместо scale можно использовать [width=1\linewidth] или [width=150mm]
+	\includegraphics[scale=0.5]{img/eq_dir.png} %Вместо scale можно использовать [width=1\linewidth] или [width=150mm]
 	\caption{Пример эквивалентных направлений $(x_i)$ и $(y_i)$ и неэквивалентного им направления $(z_i)$.}
 	\label{fig:eq_dir}
 \end{figure}
@@ -201,7 +201,7 @@ act over semigroup, unar, congruence lattice, identity.
 \textit{Прямой} называется унар, изоморфный унару $\mathbb{Z}$ с операцией $i \cdot a = i + 1$ при $i \in \mathbb{Z}$ (см. рисунок~\ref{fig:line}).
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=1]{img/line.png}
+	\includegraphics[scale=0.6]{img/line.png}
 	\caption{Прямая (унар).}
 	\label{fig:line}
 \end{figure}
@@ -209,19 +209,17 @@ act over semigroup, unar, congruence lattice, identity.
 \textit{Лучом} называется унар, изоморфный унару $\mathbb{N}$ с операцией $i \cdot a = i + 1$ при $i \in \mathbb{N}$ (см. рисунок~\ref{fig:ray}).
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=1]{img/ray.png}
+	\includegraphics[scale=0.5]{img/ray.png}
 	\caption{Луч (унар).}
 	\label{fig:ray}
 \end{figure}
 
 Основным результатом работы является следующее утверждение.
-
 \begin{theorem} \label{thm:main}
 	Если решётка конгруэнций унара удовлетворяет нетривиальному решёточному тождеству, то унар является гомоморфным образом копроизведения конечного числа прямых и лучей.
 \end{theorem}
 
 Доказательство теоремы основывается на ряде вспомогательных утверждений, часть из которых верны не только для унаров, но и для более широкого класса полигонов.
-
 \begin{lemma}[{\cite[лемма 1]{Kozhukhov_8}}] \label{lemma:1}
 	Если $X$ — полигон над полугруппой $S$, $Y$ — его подполигон и $\rho_Y$ — конгруэнция Риса, то решётки $\Con Y$ и $\Con (X/Y)$ изоморфно вкладываются в решётку $\Con X$.
 \end{lemma}
@@ -239,7 +237,7 @@ act over semigroup, unar, congruence lattice, identity.
 	Всякая конечная решётка удовлетворяет некоторому нетривиальному тождеству.
 \end{lemma}
 
-\begin{lemma}[{\cite[леммы 4,5,6]{Kozhukhov_8}}]
+\begin{lemma}[{\cite[леммы 4,5,6]{Kozhukhov_8}}] \label{lemma:4}
 	Пусть $X$ — полигон над полугруппой $S$.
 	Если решётка $\Con X$ удовлетворяет нетривиальному тождеству, то:
 	\begin{enumerate}
@@ -288,7 +286,53 @@ act over semigroup, unar, congruence lattice, identity.
 \begin{lemma} \label{lemma:7}
 	Если решётка $\Con X$ унара $X$ удовлетворяет нетривиальному тождеству, то $X$ имеет лишь конечное число узлов.
 \end{lemma}
-
+\begin{proof}
+	Нетрудно увидеть, что все узлы делятся на два типа (см. рисунок 4): где $x \notin \{ y, z \}$ и где $x \in \{ y, z \}$.
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=0.4]{img/uzly.png}
+		\caption{Типы узлов.}
+		\label{fig:uzly}
+	\end{figure}
+	Очевидно, что узлов второго типа в одной компоненте связности может быть не более одного (см. утверждение (3) леммы~\ref{lemma:4}).
+	Так как по утверждению (1) леммы~\ref{lemma:4} компонент связности конечное число, то и число таких узлов тоже конечно.
+	
+	Осталось показать, что узлов первого типа конечное число.
+	Пусть это не так, т.е. их бесконечно много.
+	Так как по утверждению (1) леммы~\ref{lemma:4} число компонент связности конечно, то узлов первого типа бесконечно много в какой-либо компоненте.
+	Рассмотрим эту компоненту связности (обозначим её через $Y$), возьмём в ней какой-нибудь узел $u_{1}$ и разберём два случая.
+	
+	\textit{Случай 1}: среди элементов $u_{1}a,u_{1}a^{2},u_{1}a^{3},\ldots$ бесконечно много узлов.
+	Тогда имеем: $u_{1},u_{1}a^{i_{1}},u_{1}a^{i_{2}},\ldots$ — узлы, $0 < i_{1} < i_{2} < \ldots$ (см. рисунок~\ref{fig:uzly_2}).
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=0.8]{img/uzly_2.png}
+		\caption{Узлы $u_i$ в компоненте связности $Y$.}
+		\label{fig:uzly_2}
+	\end{figure}
+	
+	Пусть $v_k a = u_k$ ($k = 1,2,\ldots$).
+	Обозначим через $Y$ компоненту связности, содержащую $u_{1}$.
+	Удалим из рассмотрения те $u_{i}$, для которых существует начальный элемент $x$ и число $k \geqslant 0$, для которых $x a^{k} = v_i$.
+	Так как по лемме~\ref{lemma:4}(2) начальных элементов лишь конечное число, то удалено будет лишь конечное число узлов $u_{i}$.
+	Из изображённых на рисунке~\ref{fig:uzly_2}, удалёнными будут узлы $u_2$ и $u_3$.
+	Перенумеруем оставшиеся узлы $u_i$ так, чтобы $v_i \notin (X \setminus XS)S^{1}$ при $i = 1,2,\ldots$.
+	
+	Рассмотрим подунар $Y' = u_1 S^1$ унара $Y$ и фактор-унар $\overline{Y} = Y/Y'$ (см. рисунок~\ref{fig:uzly_3}).
+	Нуль унара $\overline{Y}$ обобзначим через $z$.
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[scale=0.7]{img/uzly_3.png}
+		\caption{Фактор-унар $\overline{Y}$.}
+		\label{fig:uzly_3}
+	\end{figure}
+	Так как $v_i \notin Y'$ при всех $i \in \mathbb{N}$, то элементы $v_i$ различны в унаре $\overline{Y}$.
+	Так как решётка $\Con X$ удовлетворяет нетривиальному тождеству, то по лемме~\ref{lemma:1} решётка $\Con \overline{Y}$ удовлетворяет этому же тождеству.
+	Так как $v_i a = z$ при всех $i \in \mathbb{N}$ и $v_i$ различны, то $\indeg z = \infty$, а это противоречит лемме~\ref{lemma:5}.
+	
+	\textit{Случай 2}: среди элементов $u_{1}a,u_{1}a^{2},u_{1}a^{3},\ldots$ лишь конечное число узлов унара $X$.
+	Здесь возможны две ситуации: либо последовательность $u_1, u_1 a, u_1 a^2, \ldots$ заканчивается циклом длины $m$: $\{ u_1 a^r, u_1 a^{r + 1}, \ldots, u_1 a^{r + m - 1} \}$ $(u_1 a^{r + m} = u_1 a^r)$, либо элементы $u_1, u_1 a, u_1 a^2, \ldots$ различны, и тогда есть последний узел $u_1 a^k$, т.е. такой узел, что элементы $u_1 a^t$ при $t > k$ не являются узлами.
+\end{proof}
 
 
 
